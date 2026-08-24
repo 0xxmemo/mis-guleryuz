@@ -1,0 +1,13 @@
+<svg width="2000" height="1121" viewBox="0 0 2000 1121" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="2000" height="1121" fill="#DCEBE5"/>
+  <path d="M0 774C319 617 519 830 817 725C1135 613 1382 275 2000 426V1121H0V774Z" fill="#0F5C57"/>
+  <path d="M0 93C314 -11 532 248 826 190C1158 125 1517 -62 2000 120V0H0V93Z" fill="#F4E7D1"/>
+  <circle cx="1458" cy="443" r="252" fill="#F8F5EE" fill-opacity=".88"/>
+  <path d="M1315 699C1329 558 1399 488 1464 488C1529 488 1615 551 1632 699C1649 846 1582 913 1475 913C1367 913 1297 846 1315 699Z" fill="#C88D67"/>
+  <circle cx="1466" cy="392" r="116" fill="#C88D67"/>
+  <path d="M1353 393C1366 298 1435 241 1518 259C1582 273 1617 333 1601 405C1580 353 1547 332 1514 326C1476 406 1417 440 1353 445V393Z" fill="#16423F"/>
+  <path d="M1238 917C1326 838 1398 803 1472 803C1543 803 1623 839 1712 917" stroke="#F4E7D1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M168 884C373 701 567 703 780 885" stroke="#8DB9A4" stroke-width="18" stroke-linecap="round" opacity=".8"/>
+  <text x="145" y="218" fill="#16423F" font-family="Arial, sans-serif" font-size="42" font-weight="600" letter-spacing="8">MIS GULERYUZ</text>
+  <text x="145" y="280" fill="#48756D" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">TALENT CONSULTANT</text>
+</svg>

@@ -1,40 +1,12 @@
-import { Logo } from "@/components/ui/logo"
-import { CopyrightYear } from "@/components/ui/copyright-year"
 import Link from "next/link"
+import { Globe2, Mail, MessageCircle } from "lucide-react"
+import { siteConfig } from "@/data/site"
 
 const links = [
-  {
-    title: "Features",
-    href: "#",
-  },
-  {
-    title: "Solutions",
-    href: "#",
-  },
-  {
-    title: "Partnerships",
-    href: "#",
-  },
-  {
-    title: "Mobile App",
-    href: "#",
-  },
-  {
-    title: "Blog",
-    href: "#",
-  },
-  {
-    title: "About",
-    href: "#",
-  },
-  {
-    title: "Licence",
-    href: "#",
-  },
-  {
-    title: "Privacy",
-    href: "#",
-  },
+  { title: "Home", href: "#top" },
+  { title: "Services", href: "#services" },
+  { title: "Approach", href: "#approach" },
+  { title: "Book a session", href: "#booking" },
 ]
 
 export default function FooterSection() {
@@ -42,80 +14,23 @@ export default function FooterSection() {
     <footer className="bg-background py-8 sm:py-16">
       <div className="mx-auto max-w-5xl space-y-6 px-6">
         <div className="flex flex-wrap justify-between gap-6">
-          <Link href="/" aria-label="go home" className="block size-fit">
-            <Logo uniColor />
+          <Link href="#top" aria-label={`${siteConfig.name} home`} className="block size-fit">
+            <span className="text-lg font-semibold tracking-tight">{siteConfig.name}</span>
+            <span className="ml-2 text-sm text-muted-foreground">{siteConfig.role}</span>
           </Link>
-
           <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X/Twitter"
-              className="block text-muted-foreground hover:text-primary"
-            >
-              <svg
-                className="size-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"
-                ></path>
-              </svg>
-            </Link>
-            <Link
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="block text-muted-foreground hover:text-primary"
-            >
-              <svg
-                className="size-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
-                ></path>
-              </svg>
-            </Link>
+            <a href={`mailto:${siteConfig.email}`} aria-label={`Email ${siteConfig.name}`} className="block text-muted-foreground hover:text-primary"><Mail className="size-5" /></a>
+            <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="block text-muted-foreground hover:text-primary"><Globe2 className="size-5" /></a>
+            <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="block text-muted-foreground hover:text-primary"><MessageCircle className="size-5" /></a>
           </div>
         </div>
         <div className="flex flex-wrap gap-4 md:gap-6">
-          {links.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="block text-sm text-foreground transition-colors duration-150 hover:text-primary"
-            >
-              <span>{item.title}</span>
-            </Link>
-          ))}
+          {links.map((item) => <Link key={item.title} href={item.href} className="block text-sm text-foreground transition-colors duration-150 hover:text-primary"><span>{item.title}</span></Link>)}
         </div>
-        <div
-          aria-hidden
-          className="h-px bg-[linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-size-[6px_1px] bg-repeat-x opacity-25"
-        />
-
+        <div aria-hidden className="h-px bg-[linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-size-[6px_1px] bg-repeat-x opacity-25" />
         <div className="flex flex-wrap justify-between gap-4">
-          <span className="text-sm text-muted-foreground">
-            © <CopyrightYear /> Tailark
-          </span>
-          <div className="flex items-center gap-2 rounded-full border border-transparent bg-card py-1 pr-4 pl-2 shadow ring-1 ring-foreground/5">
-            <div className="relative flex size-3">
-              <span className="absolute inset-0 block size-full animate-pulse rounded-full bg-emerald-100 transition-none duration-1500"></span>
-              <span className="relative m-auto block size-1 rounded-full bg-emerald-500"></span>
-            </div>
-            <span className="text-sm">All Systems Normal</span>
-          </div>
+          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
+          <span className="text-sm text-muted-foreground">{siteConfig.tagline}</span>
         </div>
       </div>
     </footer>
