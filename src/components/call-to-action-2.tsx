@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-import { Layout } from "@/components/illustrations/layout"
+import { Map } from "@/components/illustrations/map"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -20,7 +20,7 @@ export default function CallToAction() {
               </Button>
             </div>
           </div>
-          <div className="max-lg:mask-b-from-35% max-lg:pt-6 max-md:mt-4 lg:absolute lg:inset-0 lg:top-12 lg:ml-auto lg:w-2/5"><Layout /></div>
+          <div className="max-lg:mask-b-from-35% max-lg:pt-6 max-md:mt-4 lg:absolute lg:inset-0 lg:top-12 lg:ml-auto lg:w-2/5"><Map /></div>
         </Card>
       </div>
     </section>
