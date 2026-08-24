@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mis Guleryuz — Talent Consultant
+
+A modern, professional landing page for a talent consultant, built with Next.js and styled with Tailwind CSS.
+
+## Tech Stack
+
+- **Next.js 15** (App Router, TypeScript)
+- **TypeScript** for type-safe development
+- **Tailwind CSS** for styling
+- **shadcn/ui** component library
+- **Tailark** component registry for pre-built UI blocks
 
 ## Getting Started
 
-First, run the development server:
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Editing Content
 
-To learn more about Next.js, take a look at the following resources:
+### Services
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit your services list in `src/data/services.ts`. Each service object supports:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **id** (string) — unique identifier
+- **title** (string) — service name
+- **description** (string) — brief overview
+- **icon** (string, optional) — icon identifier
+- **duration** (string, optional) — e.g., "1 hour", "30 mins"
+- **price** (string, optional) — e.g., "$150", "Custom quote"
+- **features** (string[], optional) — array of key features or benefits
 
-## Deploy on Vercel
+Example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+{
+  id: "career-coaching",
+  title: "Career Coaching",
+  description: "1-on-1 guidance for your next career move",
+  icon: "briefcase",
+  duration: "1 hour",
+  price: "$150",
+  features: ["Resume review", "Interview prep", "Salary negotiation"]
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Site-Wide Information
+
+Edit `src/data/site.ts` to update:
+
+- **name** — your full name
+- **tagline** — your professional headline
+- **bio** — about you
+- **email** — contact email
+- **socials** — links to LinkedIn, Twitter, etc.
+- **bookingUrl** — your Google Calendar appointment scheduling link (see Booking section below)
+
+## Environment Variables
+
+### TAILARK_API_KEY
+
+Store your Tailark API key in `.env.local` (already gitignored for security):
+
+```
+TAILARK_API_KEY=your_key_here
+```
+
+This is only needed if you're fetching or adding new Tailark blocks. For everyday development and building, you don't need to configure it.
+
+**To use the shadcn CLI with the key sourced:**
+
+```bash
+set -a; . .env.local; set +a && npx shadcn add
+```
+
+## Booking
+
+To enable appointment scheduling:
+
+1. Set up [Google Calendar Appointment Scheduling](https://support.google.com/calendar/answer/10729076)
+2. Copy your scheduling link
+3. Paste it into the `bookingUrl` field in `src/data/site.ts`
+
+The booking button and link will appear throughout the site automatically.
+
+## Deployment
+
+This site deploys seamlessly to **Vercel**:
+
+1. Push your repository to GitHub
+2. Import the project on [vercel.com](https://vercel.com)
+3. Deploy with a single click
+
+No additional configuration needed — Vercel handles Next.js builds automatically.
